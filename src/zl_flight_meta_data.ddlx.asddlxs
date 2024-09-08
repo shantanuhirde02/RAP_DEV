@@ -1,0 +1,48 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{ typeName: 'Connection',
+                 typeNamePlural:  'Connections'
+                  }
+annotate view ZL_CONNECTION with
+{
+  @UI.facet: [{ id: 'Connection',
+               purpose: #STANDARD,//Anootation for object info
+               type: #IDENTIFICATION_REFERENCE,
+               position: 10 ,
+               label: 'Connection Detail'              
+               },
+               { 
+               id: 'Flight',
+               purpose: #STANDARD,//Anootation for object info
+               type: #LINEITEM_REFERENCE,
+               position: 20 ,
+               label: 'Flight Detail' ,
+               targetElement: '_Flight'
+               }
+               ]
+
+  @UI.lineItem: [{ position : 10 , label:'Airline' }]
+  @UI.identification: [{position: 10 , label: 'Airline'}]
+  CarrierId;
+  @UI.lineItem: [{ position : 20 }]
+  @UI.identification: [{position: 20 }] //Annotation for object info
+  ConnectionId;
+  @UI.lineItem: [{ position : 30 }]
+  @UI.selectionField: [{  position : 10 }] //Default selection field
+  @UI.identification: [{position: 30 }]
+  AirportFromId;
+  @UI.lineItem: [{ position :40 }]
+  @UI.selectionField: [{  position : 20 }]
+  @UI.identification: [{position: 40 }]
+  AirportToId;
+  @UI.lineItem: [{ position : 50 , label:'Departure Time' }]
+  @UI.identification: [{position: 50 }]
+  DepartureTime;
+  @UI.lineItem: [{ position : 60 , label:'Arrival Time' }]
+  @UI.identification: [{position: 60 }]
+  ArrivalTime;
+  @UI.identification: [{position: 60 }]
+  Distance;
+  @UI.identification: [{position: 70 }]
+  DistanceUnit;
+
+}
