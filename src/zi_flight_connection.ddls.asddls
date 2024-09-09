@@ -21,5 +21,6 @@ association [1] to ZL_CARRIER_NM as _AirlineNm on $projection.CarrierId = _Airli
     plane_type_id as PlaneTypeId,
     seats_max as SeatsMax,
     seats_occupied as SeatsOccupied,
+    @Search.defaultSearchElement: true
     _AirlineNm
 }
